@@ -5,11 +5,10 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
-import org.springframework.cglib.core.Local;
 import org.springframework.stereotype.Service;
 
 import com.example.tempProjekt.models.Temp;
-import com.example.tempProjekt.repository.humidityRepository;
+
 import com.example.tempProjekt.repository.tempRepository;
 
 @Service
