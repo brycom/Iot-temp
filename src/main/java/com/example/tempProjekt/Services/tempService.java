@@ -1,6 +1,5 @@
 package com.example.tempProjekt.Services;
 
-import com.example.tempProjekt.models.Humidity;
 import com.example.tempProjekt.models.Temp;
 import com.example.tempProjekt.repository.tempRepository;
 import java.time.LocalDate;

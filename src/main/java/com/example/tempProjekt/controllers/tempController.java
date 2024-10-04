@@ -1,7 +1,6 @@
 package com.example.tempProjekt.controllers;
 
 import com.example.tempProjekt.Services.TempService;
-import com.example.tempProjekt.models.Humidity;
 import com.example.tempProjekt.models.Temp;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;

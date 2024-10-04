@@ -3,8 +3,6 @@ package com.example.tempProjekt.controllers;
 import com.example.tempProjekt.Services.HumidityService;
 import com.example.tempProjekt.Services.TempService;
 import com.example.tempProjekt.models.Input;
-import org.springframework.messaging.handler.annotation.MessageMapping;
-import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.messaging.simp.annotation.SubscribeMapping;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -42,7 +40,7 @@ public class ArduinoController {
     humidityService.newHumidity(input.getHumidity());
 
     messagingTemplate.convertAndSend("/latest",
-       "{\"temperature\":" + input.getTemperature() + ", \"humidity\":" + input.getHumidity() + "}");
+        "{\"temperature\":" + input.getTemperature() + ", \"humidity\":" + input.getHumidity() + "}");
 
     return "Temperature and humidity received successfully.";
   }
