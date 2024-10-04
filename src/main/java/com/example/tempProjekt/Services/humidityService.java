@@ -9,12 +9,12 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 @Service
-public class humidityService {
+public class HumidityService {
 
   private final humidityRepository humidityRepository;
   private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
 
-  public humidityService(humidityRepository humidityRepository) {
+  public HumidityService(humidityRepository humidityRepository) {
     this.humidityRepository = humidityRepository;
   }
 
@@ -28,20 +28,19 @@ public class humidityService {
   }
 
   public List<Humidity> getTodaysHumidity() {
-    String date = /*  LocalDate.now().toString() */LocalDate
-      .of(2024, 9, 24)
-      .toString();
-
+    String date = LocalDate.now().toString();
     return humidityRepository.todaysHumidity(date);
   }
 
   public List<Humidity> getHumidityForHour() {
-    String date = /* LocalDate.now().toString() */LocalDate
-      .of(2024, 9, 24)
-      .toString();
-    LocalTime time = /* LocalTime.now() */LocalTime.of(14, 15);
+    String date = LocalDate.now().toString();
+    LocalTime time = LocalTime.now();
     int hour = time.getHour();
 
     return humidityRepository.humidityForHour(date, hour);
+  }
+
+  public List<Humidity> getHumidityForDate(String date) {
+    return humidityRepository.humidityForDate(date);
   }
 }

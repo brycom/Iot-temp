@@ -14,4 +14,7 @@ public interface humidityRepository extends CrudRepository<Humidity, Integer> {
     @Query("SELECT h FROM Humidity h WHERE h.date = ?1 AND h.time LIKE ?2%")
     List<Humidity> humidityForHour(String date, int timeString);
 
+    @Query("SELECT h FROM Humidity h WHERE h.date =?1")
+    List<Humidity> humidityForDate(String date);
+
 }
