@@ -9,11 +9,11 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 @Service
-public class tempService {
+public class TempService {
 
   private final tempRepository tempRepository;
 
-  public tempService(tempRepository tempRepository) {
+  public TempService(tempRepository tempRepository) {
     this.tempRepository = tempRepository;
   }
 
@@ -31,19 +31,19 @@ public class tempService {
   }
 
   public List<Temp> getTodaysTemps() {
-    String date = /* LocalDate.now().toString() */LocalDate
-      .of(2024, 9, 24)
-      .toString();
+    String date = LocalDate.now().toString();
 
     return tempRepository.todaysTemp(date);
   }
 
   public List<Temp> getTempsForHour() {
-    String date = /* LocalDate.now().toString() */LocalDate
-      .of(2024, 9, 24)
-      .toString();
+    String date = LocalDate.now().toString();
     LocalTime time = /* LocalTime.now() */LocalTime.of(14, 15);
     int hour = time.getHour();
     return tempRepository.tempsForHour(date, hour);
+  }
+
+  public List<Temp> getTempForDate(String date) {
+    return tempRepository.tempForDate(date);
   }
 }
