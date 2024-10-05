@@ -28,8 +28,6 @@ public class humidityController {
 
   @GetMapping("/humidity/{date}")
   public List<Humidity> getHumidityForDate(@PathVariable String date) {
-    System.out
-        .println("getHumidity WOGELI BOGELI GUBB FAN " + date + "\n" + humidityService.getHumidityForDate(date).size());
     return humidityService.getHumidityForDate(date);
   }
 }

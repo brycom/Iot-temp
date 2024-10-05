@@ -13,14 +13,12 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
   @Override
   public void registerStompEndpoints(StompEndpointRegistry registry) {
     registry.addEndpoint("/connect")
-        .setAllowedOriginPatterns("*"); // Ingen SockJS, direkt WebSocket
+        .setAllowedOriginPatterns("*");
   }
 
   @Override
   public void configureMessageBroker(MessageBrokerRegistry config) {
-    // Definiera var meddelanden skickas
     config.setApplicationDestinationPrefixes("/arduino");
-    // Aktivera inbyggd broker för att skicka meddelanden till /latest
     config.enableSimpleBroker("/latest");
   }
 }

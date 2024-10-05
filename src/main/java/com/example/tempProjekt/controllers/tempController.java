@@ -28,7 +28,6 @@ public class tempController {
 
   @GetMapping("/temp/{date}")
   public List<Temp> getTempForDate(@PathVariable String date) {
-    System.out.println("getTemp WOGELI BOGELI GUBB FAN: " + date + "\n" + tempService.getTempForDate(date).size());
     return tempService.getTempForDate(date);
   }
 }

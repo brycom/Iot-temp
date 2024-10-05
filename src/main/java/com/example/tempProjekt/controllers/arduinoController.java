@@ -29,7 +29,6 @@ public class ArduinoController {
 
   @SubscribeMapping("/latest")
   public String subscribeToLatest() {
-    System.out.println("A client is subscribing to /latest");
     return "You are now subscribed to /latest";
   }
 
